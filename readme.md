@@ -10,12 +10,18 @@ Showcase project.
 ## Run
 
 - `mix test` — run tests
-- `iex -S mix` — REPL with the project loaded
+- `mix phx.server` — run the JSON API on port 4000
+
+## Users API
+
+The in-memory users API is available at `/api/users`. It supports `GET`, `POST`,
+`PUT`, `PATCH`, and `DELETE`; create and update bodies use a `user` JSON object
+containing `name` and `email`. Data is reset whenever the application restarts.
 
 ## Structure
 
 - `mix.exs` — project config (name, version, dependencies)
-- `lib/` — source code; `mega_elixir.ex` defines the `MegaElixir` module
+- `lib/` — application, business context, in-memory repository, and web interface
 - `test/` — tests (ExUnit)
 - `.formatter.exs` — code-formatting rules
 - `.gitignore` — files git should ignore
