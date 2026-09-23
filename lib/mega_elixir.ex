@@ -1,18 +1,5 @@
 defmodule MegaElixir do
   @moduledoc """
-  Documentation for `MegaElixir`.
+  A minimal CRUD JSON API (no database) showcasing the service–repository pattern.
   """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> MegaElixir.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
 end

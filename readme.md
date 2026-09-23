@@ -1,21 +1,31 @@
 # MegaElixir
 
-Showcase project.
+Minimal CRUD JSON API (no database) demonstrating the service–repository pattern.
 
-## Install Elixir (Windows)
+## Install
 
-1. `choco install elixir` (bundles Erlang/OTP) — or use the installer from [elixir-lang.org/install](https://elixir-lang.org/install.html#windows).
-2. Verify: `elixir --version`
+1. Install Elixir (bundles Erlang/OTP): `choco install elixir` — or the installer from [elixir-lang.org](https://elixir-lang.org/install.html#windows).
+2. `mix deps.get`
 
 ## Run
 
-- `mix test` — run tests
-- `iex -S mix` — REPL with the project loaded
+- `mix test` — run the tests
+- `mix phx.server` — start the API at http://localhost:4000
+
+## API
+
+| Method     | Path             | Action |
+| ---------- | ---------------- | ------ |
+| GET        | /api/users       | list   |
+| GET        | /api/users/:id   | show   |
+| POST       | /api/users       | create |
+| PUT/PATCH  | /api/users/:id   | update |
+| DELETE     | /api/users/:id   | delete |
+
+Create/update body: `{"user": {"name": "...", "email": "..."}}`.
 
 ## Structure
 
-- `mix.exs` — project config (name, version, dependencies)
-- `lib/` — source code; `mega_elixir.ex` defines the `MegaElixir` module
-- `test/` — tests (ExUnit)
-- `.formatter.exs` — code-formatting rules
-- `.gitignore` — files git should ignore
+- `lib/mega_elixir/users.ex` — `Users` service: validation + business rules
+- `lib/mega_elixir/users/` — `User` struct and in-memory `Repository` (data layer)
+- `lib/mega_elixir_web/` — endpoint, router, controllers (JSON API)
