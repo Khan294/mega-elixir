@@ -14,5 +14,8 @@ end
 
 config :mega_elixir, MegaElixir.Endpoint,
   adapter: Bandit.PhoenixAdapter,
+  pubsub_server: MegaElixir.PubSub,
+  secret_key_base: System.get_env("SECRET_KEY_BASE", String.duplicate("local-learning-only-", 4)),
+  live_view: [signing_salt: "users-live"],
   http: [ip: {127, 0, 0, 1}, port: String.to_integer(System.get_env("PORT", "4000"))],
   server: config_env() != :test

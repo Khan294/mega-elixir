@@ -13,7 +13,12 @@ mix ecto.migrate
 mix phx.server
 ```
 
-Visit http://localhost:4000/api/hello:
+Visit http://localhost:4000 for the native LiveView CSV upload and users table.
+The page uses LiveView uploads and server-side events; no API calls or custom
+JavaScript hooks. Both the page and API reuse `MegaElixir.Users` and list the
+latest 10 users by descending ID. Restart the server after code changes.
+
+The JSON API is at http://localhost:4000/api/hello:
 
 ```json
 {"users":[]}
