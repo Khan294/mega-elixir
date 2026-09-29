@@ -26,7 +26,8 @@ defmodule MegaElixir.MixProject do
       {:bandit, "~> 1.0"},
       {:jason, "~> 1.4"},
       {:ecto_sql, "~> 3.13"},
-      {:postgrex, "~> 0.21"}
+      {:postgrex, "~> 0.21"},
+      {:nimble_csv, "~> 1.3"}
     ]
   end
 end
