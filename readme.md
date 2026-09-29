@@ -1,21 +1,22 @@
 # MegaElixir
 
-Showcase project.
+Minimal Phoenix JSON API. Requires Elixir 1.20+ and Erlang/OTP.
 
-## Install Elixir (Windows)
+```sh
+mix deps.get
+mix phx.server
+```
 
-1. `choco install elixir` (bundles Erlang/OTP) — or use the installer from [elixir-lang.org/install](https://elixir-lang.org/install.html#windows).
-2. Verify: `elixir --version`
+Visit http://localhost:4000/api/hello:
 
-## Run
+```json
+{"message":"Hello, world!"}
+```
 
-- `mix test` — run tests
-- `iex -S mix` — REPL with the project loaded
+All application code lives in `lib/mega_elixir.ex`; server configuration is in
+`config/config.exs`. No database or frontend.
 
-## Structure
+Run tests with `mix test`.
 
-- `mix.exs` — project config (name, version, dependencies)
-- `lib/` — source code; `mega_elixir.ex` defines the `MegaElixir` module
-- `test/` — tests (ExUnit)
-- `.formatter.exs` — code-formatting rules
-- `.gitignore` — files git should ignore
+On Windows PowerShell, use `mix.bat` if execution policy blocks `mix.ps1`.
+To use another port: `$env:PORT = "4001"; mix.bat phx.server`.
